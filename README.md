@@ -144,7 +144,6 @@ To sum up, most vulnerabilities of proving system are **Unstandardized Cryptogra
 - [CirC: Compiler infrastructure for proof systems, software verification, and more](https://github.com/circify/circ/)
 - [Weak Fiat-Shamir Attacks on Modern Proof Systems](https://eprint.iacr.org/2023/691.pdf)
 - [On the practical CPAD security of “exact” and threshold FHE schemes and libraries](https://eprint.iacr.org/2024/116)
-- [Attacks Against the INDCPA-D Security of Exact FHE Schemes](https://eprint.iacr.org/2024/127)
 - [Automated Analysis of Halo2 Circuits](https://ceur-ws.org/Vol-3429/paper3.pdf)
 
 ### Blogs
@@ -157,6 +156,7 @@ To sum up, most vulnerabilities of proving system are **Unstandardized Cryptogra
 
 #### Resources
 
+- [Trial of Bit Cryptography Blog](https://tlu.tarilabs.com/cryptography/)
 - [0xPARC Blog](https://0xparc.org/blog)
 - [zkHACK Blog](https://zkhack.dev/blog/)
 - [NCC Group Research Blog](https://research.nccgroup.com/)
@@ -168,6 +168,7 @@ To sum up, most vulnerabilities of proving system are **Unstandardized Cryptogra
 - [Nethermind Blog](https://www.nethermind.io/blogs)
 - [Ingonyama Blog](https://www.ingonyama.com/blog)
 - [Open Zeppelin Blog](https://blog.openzeppelin.com/)
+- [Vitalik Blog](https://vitalik.eth.limo/)
 - [samczsum Blog](https://samczsun.com/)
 - [Xor0v0 Blog](https://xor0v0.github.io/ZK-Puzzle-Writeups/)
 
@@ -249,9 +250,10 @@ writeups
 
 - ["Security of ZKP projects: same but different"](https://www.aumasson.jp/data/talks/zksec_zk7.pdf) by JP Aumasson @ [Taurus](https://www.taurushq.com/). Great slides outlining the different types of zk security vulnerabilities along with examples.
 - [0xPARC zk-bug-tracker](https://github.com/0xPARC/zk-bug-tracker) by [0xPARC](https://0xparc.org/) and [PSE](https://pse.dev/).
-- BUG Bounty platform: [code4rena](https://code4rena.com/), [Immunefi](https://immunefi.com/).
+- BUG bounty platform: [code4rena](https://code4rena.com/), [Immunefi](https://immunefi.com/).
 - [l2-security-framework by QuantStamp](https://github.com/quantstamp/l2-security-framework)
 - [MyZKP: Building Zero Knowledge Proof from Scratch in Rust](https://koukyosyumei.github.io/MyZKP/index.html)
+- [ZKP vulns dataset](https://docs.google.com/spreadsheets/d/1E97ulMufitGSKo_Dy09KYGv-aBcLPXtlN5QUpwyv66A/edit?gid=0#gid=0).
 
 ## Acknowledgements
 

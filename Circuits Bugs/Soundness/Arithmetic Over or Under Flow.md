@@ -11,7 +11,7 @@ In zero-knowledge proof systems, calculations are often carried out in finite fi
 
 In normal operations, if a result exceeds the finite field’s maximum value (i.e., is greater than or equal to p), the operation result is reduced by p, effectively wrapping around. This ensures that results always remain within the range [0, p-1]. This behavior avoids traditional overflow (in the classical computing sense), as the result is always within the bounds of the field.
 
-As a result, overflow and underflow do not trigger errors but rather “wrap around.” If developers fail to account for this behavior, it can lead to issues such as input alias attacks.
+As a result, overflow and underflow do not trigger errors but rather "wrap around". If developers fail to account for this behavior, it can lead to issues such as input alias attacks.
 
 - Input Alias Attack
   
