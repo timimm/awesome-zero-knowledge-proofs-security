@@ -79,6 +79,7 @@ This is a very general type of bug, and we divide it into 6 sub issues:
 - [Non-determinism](./Circuits%20Bugs/Soundness/Non-determinism.md)
 - [Assigned but not Constrained](./Circuits%20Bugs/Soundness/Assigned%20but%20not%20constrained.md)
 - [Compiler Optimization](./Circuits%20Bugs/Soundness/Compiler%20Optimization.md)
+- [Trusted Setup Error](./Circuits%20Bugs/Zero-Knowledge/Trusted%20Setup%20Error.md)
 
 #### Completeness Error (Over-constrained)
 
@@ -86,7 +87,6 @@ This is a very general type of bug, and we divide it into 6 sub issues:
   
 #### Zero Knowledge Error
 
-- [Trusted Setup Leak](./Circuits%20Bugs/Zero-Knowledge/Trusted%20Setup%20Leak.md)
 - [Bad Protocol Design/Implementation](./Circuits%20Bugs/Zero-Knowledge/Bad%20Protocol%20Design\Impl.md)
 
 ### Misc: Witness Generation & Arithemtization
@@ -170,7 +170,7 @@ To sum up, most vulnerabilities of proving system are **Unstandardized Cryptogra
 - [Open Zeppelin Blog](https://blog.openzeppelin.com/)
 - [Vitalik Blog](https://vitalik.eth.limo/)
 - [samczsum Blog](https://samczsun.com/)
-- [Xor0v0 Blog](https://xor0v0.github.io/ZK-Puzzle-Writeups/)
+- [Tim Blog](https://timimm.github.io/zk-writeups/)
 
 
 ### Videos & Podcast
