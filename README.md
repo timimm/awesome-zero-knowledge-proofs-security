@@ -129,6 +129,7 @@ To sum up, most vulnerabilities of proving system are **Unstandardized Cryptogra
 
 ## 4. Learning Resources
 
+- [LearnAI — Scroll Interactive Course](https://www.uselearnai.com/chat?topic=Scroll+L2) — AI-powered personal tutor for learning Scroll from scratch through conversation
 ### Books & Docs
 
 - [Proofs, Arguments, and Zero-Knowledge (PAZK)](https://people.cs.georgetown.edu/jthaler/ProofsArgsAndZK.pdf) by Thaler.
