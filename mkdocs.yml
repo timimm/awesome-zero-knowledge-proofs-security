@@ -1,0 +1,97 @@
+site_name: Awesome Zero Knowledge Proofs Security
+site_author: Tim
+site_url: https://timimm.github.io/awesome-zero-knowledge-proofs-security/
+copyright: Copyright &copy; 2024 - 2030 Tim
+
+repo_name: timimm/awesome-zero-knowledge-proofs-security
+repo_url: https://github.com/timimm/awesome-zero-knowledge-proofs-security
+
+docs_dir: .
+site_dir: /tmp/awesome-zero-knowledge-proofs-security-site
+
+nav:
+  - Home: README.md
+  - Checklist: check_list.md
+  - Architectural Design Flaws:
+      - Front-running: Architectural Design Flaws/Front-Running.md
+  - Circuit Bugs:
+      - Overview: Circuits Bugs/README.md
+      - Soundness:
+          - General Logic Bug: Circuits Bugs/Soundness/General Logic Bug.md
+          - Arithmetic Over/Under Flow: Circuits Bugs/Soundness/Arithmetic Over or Under Flow.md
+          - Mismatched Type or Length: Circuits Bugs/Soundness/Mismatched Type or Length.md
+          - Non-determinism: Circuits Bugs/Soundness/Non-determinism.md
+          - Assigned but not Constrained: Circuits Bugs/Soundness/Assigned but not constrained.md
+          - Cryptographic Primitive Misuse: Circuits Bugs/Soundness/Cryptographic Primitive Misuse.md
+          - Compiler Optimization: Circuits Bugs/Soundness/Compiler Optimization.md
+          - Trusted Setup Error: Circuits Bugs/Soundness/Trusted Setup Error.md
+      - Completeness:
+          - Over-constrained Circuits: Circuits Bugs/Completeness/Over-constrained Circuits.md
+      - Zero Knowledge:
+          - Bad Protocol Design/Implementation: "Circuits Bugs/Zero-Knowledge/Bad Protocol Design\\Impl.md"
+  - Proving System Bugs:
+      - Overview: Proving System Bugs/README.md
+      - Bad Polynomial Implementation: Proving System Bugs/Bad Polynomial Impl.md
+      - Frozen Heart: Proving System Bugs/Frozen Heart.md
+      - Lack of Domain Separation: Proving System Bugs/Lack of Domain Seperation.md
+      - Missing Curve Point Check: Proving System Bugs/Missing Curve Point Check.md
+      - Insecure Hash Function: Proving System Bugs/Unsecure Hash Function.md
+
+theme:
+  name: material
+  language: en
+  palette:
+    primary: white
+    accent: teal
+  icon:
+    logo: material/shield-check
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.tracking
+    - search.suggest
+    - search.highlight
+
+plugins:
+  - search
+  - git-revision-date-localized:
+      type: datetime
+      timezone: Asia/Shanghai
+      locale: en
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+      linenums: true
+  - def_list
+  - footnotes
+  - meta
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: math
+          class: arithmatex
+          format: !!python/name:pymdownx.arithmatex.fence_mathjax_format
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
