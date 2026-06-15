@@ -1,0 +1,2518 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Tim">
+      
+      
+        <link rel="canonical" href="https://timimm.github.io/awesome-zero-knowledge-proofs-security/">
+      
+      
+      
+        <link rel="next" href="Architectural%20Design%20Flaws/Front-Running/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Awesome Zero Knowledge Proofs Security</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="white" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#awesome-zero-knowledge-proofs-security" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Awesome Zero Knowledge Proofs Security" class="md-header__button md-logo" aria-label="Awesome Zero Knowledge Proofs Security" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9m-6-8L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Awesome Zero Knowledge Proofs Security
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Home
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/timimm/awesome-zero-knowledge-proofs-security" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    timimm/awesome-zero-knowledge-proofs-security
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="Architectural%20Design%20Flaws/Front-Running/" class="md-tabs__link">
+          
+  
+  
+  Architectural Design Flaws
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="Circuits%20Bugs/" class="md-tabs__link">
+          
+  
+  
+  Circuit Bugs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="Proving%20System%20Bugs/" class="md-tabs__link">
+          
+  
+  
+  Proving System Bugs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="check_list/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Checklist
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="AI%20Skills/" class="md-tabs__link">
+          
+  
+  
+  AI Skills
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="." title="Awesome Zero Knowledge Proofs Security" class="md-nav__button md-logo" aria-label="Awesome Zero Knowledge Proofs Security" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m10 17-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9m-6-8L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5z"/></svg>
+
+    </a>
+    Awesome Zero Knowledge Proofs Security
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/timimm/awesome-zero-knowledge-proofs-security" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    timimm/awesome-zero-knowledge-proofs-security
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="." class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Content
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-vulnerability-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Vulnerability Classification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Vulnerability Classification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architectural-design-flaws" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectural Design Flaws
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FrontEnd: Circuits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FrontEnd: Circuits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#soundness-error-under-constrained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soundness Error (Under-constrained)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completeness-error-over-constrained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completeness Error (Over-constrained)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zero-knowledge-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zero Knowledge Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc-witness-generation-arithmetization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Misc: Witness Generation &amp; Arithmetization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-proving-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BackEnd: Proving system
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-security-consideration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Security Consideration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Security Consideration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#circom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        circom
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cairo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cairo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-learning-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Learning Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Learning Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#books-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Books &amp; Docs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Papers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blogs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Blogs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-podcast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos &amp; Podcast
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audit-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit Reports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zkhackctfpuzzles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        zkHACK/CTF/Puzzles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lectures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Miscellaneous
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acknowledgements
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architectural Design Flaws
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architectural Design Flaws
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Architectural%20Design%20Flaws/Front-Running/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Front-running
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Circuit Bugs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Circuit Bugs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Circuits%20Bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Soundness
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Soundness
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Circuits%20Bugs/Soundness/General%20Logic%20Bug/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    General Logic Bug
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Circuits%20Bugs/Soundness/Arithmetic%20Over%20or%20Under%20Flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arithmetic Over/Under Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Circuits%20Bugs/Soundness/Mismatched%20Type%20or%20Length/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mismatched Type or Length
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Circuits%20Bugs/Soundness/Non-determinism/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Non-determinism
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Circuits%20Bugs/Soundness/Assigned%20but%20not%20constrained/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Assigned but not Constrained
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Circuits%20Bugs/Soundness/Cryptographic%20Primitive%20Misuse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cryptographic Primitive Misuse
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Circuits%20Bugs/Soundness/Compiler%20Optimization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compiler Optimization
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Circuits%20Bugs/Soundness/Trusted%20Setup%20Error/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trusted Setup Error
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Completeness
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Completeness
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Circuits%20Bugs/Completeness/Over-constrained%20Circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Over-constrained Circuits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zero Knowledge
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Zero Knowledge
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Circuits%20Bugs/Zero-Knowledge/Bad%20Protocol%20Design%5CImpl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bad Protocol Design/Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proving System Bugs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Proving System Bugs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Proving%20System%20Bugs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Proving%20System%20Bugs/Bad%20Polynomial%20Impl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bad Polynomial Implementation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Proving%20System%20Bugs/Frozen%20Heart/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frozen Heart
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Proving%20System%20Bugs/Lack%20of%20Domain%20Seperation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lack of Domain Separation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Proving%20System%20Bugs/Missing%20Curve%20Point%20Check/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Missing Curve Point Check
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Proving%20System%20Bugs/Unsecure%20Hash%20Function/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Insecure Hash Function
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="check_list/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Checklist
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Skills
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    AI Skills
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="AI%20Skills/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="AI%20Skills/audit-overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    audit-overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="AI%20Skills/zk-audit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    zk-audit
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-content" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Table of Content
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-vulnerability-classification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Vulnerability Classification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Vulnerability Classification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#architectural-design-flaws" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architectural Design Flaws
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-circuits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FrontEnd: Circuits
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FrontEnd: Circuits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#soundness-error-under-constrained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Soundness Error (Under-constrained)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#completeness-error-over-constrained" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completeness Error (Over-constrained)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zero-knowledge-error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Zero Knowledge Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#misc-witness-generation-arithmetization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Misc: Witness Generation &amp; Arithmetization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-proving-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        BackEnd: Proving system
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-security-consideration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Security Consideration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Security Consideration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#circom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        circom
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cairo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cairo
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-learning-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Learning Resources
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Learning Resources">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#books-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Books &amp; Docs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#papers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Papers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#blogs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blogs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Blogs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#highlights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Highlights
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#videos-podcast" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Videos &amp; Podcast
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#audit-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Audit Reports
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zkhackctfpuzzles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        zkHACK/CTF/Puzzles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lectures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lectures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Miscellaneous
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acknowledgements
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="awesome-zero-knowledge-proofs-security">Awesome zero knowledge proofs security<a class="headerlink" href="#awesome-zero-knowledge-proofs-security" title="Permanent link">&para;</a></h1>
+<p><a href="https://awesome.re/"><img alt="Awesome" src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg" /></a> A curated list of awesome things related to learning zero knowledge proofs security</p>
+<div align=center><img src="Assets/Zero Knowledge Security.png" style="zoom:50%;"></div>
+
+<h2 id="table-of-content">Table of Content<a class="headerlink" href="#table-of-content" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#table-of-content">Table of Content</a></li>
+<li><a href="#1-introduction">1. Introduction</a></li>
+<li><a href="#2-vulnerability-classification">2. Vulnerability Classification</a></li>
+<li><a href="#architectural-design-flaws">Architectural Design Flaws</a></li>
+<li><a href="#frontend-circuits">FrontEnd: Circuits</a><ul>
+<li><a href="#soundness-error-under-constrained">Soundness Error (Under-constrained)</a></li>
+<li><a href="#completeness-error-over-constrained">Completeness Error (Over-constrained)</a></li>
+<li><a href="#zero-knowledge-error">Zero Knowledge Error</a></li>
+</ul>
+</li>
+<li><a href="#misc-witness-generation--arithmetization">Misc: Witness Generation \&amp; Arithmetization</a></li>
+<li><a href="#backend-proving-system">BackEnd: Proving system</a></li>
+<li><a href="#3-security-consideration">3. Security Consideration</a></li>
+<li><a href="#circom">circom</a></li>
+<li><a href="#cairo">cairo</a></li>
+<li><a href="#4-learning-resources">4. Learning Resources</a></li>
+<li><a href="#books--docs">Books \&amp; Docs</a></li>
+<li><a href="#papers">Papers</a></li>
+<li><a href="#blogs">Blogs</a><ul>
+<li><a href="#highlights">Highlights</a></li>
+<li><a href="#resources">Resources</a></li>
+</ul>
+</li>
+<li><a href="#videos--podcast">Videos \&amp; Podcast</a></li>
+<li><a href="#audit-reports">Audit Reports</a></li>
+<li><a href="#tools">Tools</a></li>
+<li><a href="#zkhackctfpuzzles">zkHACK/CTF/Puzzles</a></li>
+<li><a href="#lectures">Lectures</a></li>
+<li><a href="#miscellaneous">Miscellaneous</a></li>
+<li><a href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+<h2 id="1-introduction">1. Introduction<a class="headerlink" href="#1-introduction" title="Permanent link">&para;</a></h2>
+<p><a href="https://github.com/matter-labs/awesome-zero-knowledge-proofs">Zero Knowledge Proof (ZKP)</a> technology is considered a promising infrastructure for blockchain and many broader privacy-preserving systems.</p>
+<p>Conceptually, proving systems are advanced cryptographic protocols. In practical ZK applications, however, security review usually separates the system into a front-end and a back-end.</p>
+<p>In general, ZKP is a technique for proving correct program execution while preserving completeness, soundness, and zero knowledge. The front-end is the provable program, usually circuits or circuit-like constraints that encode computation logic. The back-end is the proving system that generates and verifies proofs for that logic.</p>
+<p>As in other engineering domains, many practical ZK failures come from implementation bugs and incorrect integration assumptions.</p>
+<p>This repository uses a zk application perspective. The following figure from <a href="https://www.aumasson.jp/data/talks/zksec_zk7.pdf">Aumasson's slides</a> provides a useful layered model.</p>
+<div align=center><img src="Assets/dc_zk.png" style="zoom:50%;"></div>
+
+<p>Circuit implementations have their own vulnerability classes, which are distinct from low-level cryptographic bugs in proving systems.</p>
+<h2 id="2-vulnerability-classification">2. Vulnerability Classification<a class="headerlink" href="#2-vulnerability-classification" title="Permanent link">&para;</a></h2>
+<p>The mental model of circuits is different from traditional programming. A value appearing in witness generation code is not necessarily constrained by the proof.</p>
+<p>The programming model of zkVM applications is closer to traditional programming, but the underlying VM is still implemented as constraints. Only circuit-friendly operations, such as <a href="https://iden3-docs.readthedocs.io/en/latest/iden3_repos/research/publications/zkproof-standards-workshop-2/pedersen-hash/pedersen.html#pdf-link">Pedersen</a>, <a href="https://eprint.iacr.org/2019/458.pdf">Poseidon</a>, and <a href="https://eprint.iacr.org/2016/492.pdf">MiMC</a>, are cheap to prove. <strong>The underlying execution model of zkVMs is still circuit-based</strong>.</p>
+<p>The emergence of zkVMs, including zkEVMs, has expanded ZK applications to smart contracts, rollups, and general programs, such as <a href="https://github.com/lambdaclass/cairo-vm">Starknet</a>, <a href="https://docs.polygon.technology/zkEVM/">Polygon zkEVM</a>, <a href="https://scroll.io/blog/zkevm">Scroll</a>, <a href="https://github.com/matter-labs/zksync-era">zkSync</a>, <a href="https://dev.risczero.com/api/zkvm/">RISC Zero</a>, and <a href="https://github.com/succinctlabs/sp1">SP1</a>.</p>
+<p>It also overlaps with traditional security fields such as reverse engineering, as shown by this CTF <a href="https://github.com/weikengchen/zkctf-r0-season1">puzzle</a> by <a href="https://github.com/weikengchen/">weikeng chen</a>.</p>
+<p>Therefore, programs above zkVMs have a broader security scope, including smart contracts and traditional application logic. This repository focuses mainly on ZK-specific security issues.</p>
+<h3 id="architectural-design-flaws">Architectural Design Flaws<a class="headerlink" href="#architectural-design-flaws" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="Architectural%20Design%20Flaws/Front-Running/">Front Running</a></li>
+</ul>
+<h3 id="frontend-circuits">FrontEnd: Circuits<a class="headerlink" href="#frontend-circuits" title="Permanent link">&para;</a></h3>
+<h4 id="soundness-error-under-constrained">Soundness Error (Under-constrained)<a class="headerlink" href="#soundness-error-under-constrained" title="Permanent link">&para;</a></h4>
+<p>Missing constraints are the most common class of circuit bug. They occur when a circuit <strong>fails to enforce necessary conditions</strong> on inputs, witness values, intermediate computations, or protocol state. As a result, a prover may satisfy the constraints while proving a statement that is false under the intended specification.</p>
+<p>This repository groups soundness errors into the following subcategories:</p>
+<ul>
+<li><a href="Circuits%20Bugs/Soundness/General%20Logic%20Bug/">General Logic</a></li>
+<li><a href="Circuits%20Bugs/Soundness/Arithmetic%20Over%20or%20Under%20Flow/">Arithmetic Over/Under Flow</a></li>
+<li><a href="Circuits%20Bugs/Soundness/Mismatched%20Type%20or%20Length/">Mismatched Types/Lengths</a></li>
+<li><a href="Circuits%20Bugs/Soundness/Non-determinism/">Non-determinism</a></li>
+<li><a href="Circuits%20Bugs/Soundness/Assigned%20but%20not%20constrained/">Assigned but not Constrained</a></li>
+<li><a href="Circuits%20Bugs/Soundness/Cryptographic%20Primitive%20Misuse/">Cryptographic Primitive Misuse</a></li>
+<li><a href="Circuits%20Bugs/Soundness/Compiler%20Optimization/">Compiler Optimization</a></li>
+<li><a href="Circuits%20Bugs/Soundness/Trusted%20Setup%20Error/">Trusted Setup Error</a></li>
+</ul>
+<h4 id="completeness-error-over-constrained">Completeness Error (Over-constrained)<a class="headerlink" href="#completeness-error-over-constrained" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="Circuits%20Bugs/Completeness/Over-constrained%20Circuits/">Over-constrained Circuits</a></li>
+</ul>
+<h4 id="zero-knowledge-error">Zero Knowledge Error<a class="headerlink" href="#zero-knowledge-error" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="Circuits%20Bugs/Zero-Knowledge/Bad%20Protocol%20Design%5CImpl/">Bad Protocol Design/Implementation</a></li>
+</ul>
+<h3 id="misc-witness-generation-arithmetization">Misc: Witness Generation &amp; Arithmetization<a class="headerlink" href="#misc-witness-generation-arithmetization" title="Permanent link">&para;</a></h3>
+<p>Worth further exploring.</p>
+<h3 id="backend-proving-system">BackEnd: Proving system<a class="headerlink" href="#backend-proving-system" title="Permanent link">&para;</a></h3>
+<p>The backend is the proving system and is closer to the cryptographic layer. One must note: <strong>even secure primitives may introduce vulnerabilities if used incorrectly in the larger protocol or configured in an insecure manner</strong>. </p>
+<p>To sum up, many proving-system vulnerabilities come from <strong>unstandardized cryptographic implementation</strong>.</p>
+<ul>
+<li><a href="Proving%20System%20Bugs/Bad%20Polynomial%20Impl/">Bad Polynomial Implementation</a></li>
+<li><a href="Proving%20System%20Bugs/Frozen%20Heart/">Frozen Heart</a></li>
+<li><a href="Proving%20System%20Bugs/Lack%20of%20Domain%20Seperation/">Lack of Domain Separation</a></li>
+<li><a href="Proving%20System%20Bugs/Missing%20Curve%20Point%20Check/">Missing Curve Point check</a></li>
+<li><a href="Proving%20System%20Bugs/Unsecure%20Hash%20Function/">Insecure Hash Function</a></li>
+</ul>
+<h2 id="3-security-consideration">3. Security Consideration<a class="headerlink" href="#3-security-consideration" title="Permanent link">&para;</a></h2>
+<h3 id="circom">circom<a class="headerlink" href="#circom" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://hackmd.io/@blockdev/Bk_-jRkXa#/">blockdev's slides</a></li>
+<li><a href="https://hackmd.io/V-7Aal05Tiy-ozmzTGBYPA?view">Best Practices for Large Circom Circuits</a></li>
+</ul>
+<p>For practical review, use <a href="check_list/">check_list.md</a> together with the <a href="Circuits%20Bugs/">Circuit Bugs</a> taxonomy. Circom-specific review should focus on constraint completeness, public input binding, witness assignment, compiler behavior, and cryptographic primitive integration.</p>
+<h3 id="cairo">cairo<a class="headerlink" href="#cairo" title="Permanent link">&para;</a></h3>
+<ol>
+<li>No payable functions</li>
+<li>Name hashed storage slots</li>
+<li>Upgradeability built-in</li>
+<li>Separated internal/external functions</li>
+<li>Cheap execution means readable algorithms</li>
+<li>Immutable variables by default</li>
+<li>Safe type conversions</li>
+<li>Option and Result traits</li>
+</ol>
+<p><strong>Reference</strong>
+- <a href="https://book.starknet.io/ch02-14-security-considerations.html">starknet book</a>
+- <a href="https://medium.com/nethermind-eth/cairo-the-starknet-way-to-writing-safe-code-8169486c7132">cairo-the-starknet-way-to-writing-safe-code by Nethermind Security</a></p>
+<h2 id="4-learning-resources">4. Learning Resources<a class="headerlink" href="#4-learning-resources" title="Permanent link">&para;</a></h2>
+<h3 id="books-docs">Books &amp; Docs<a class="headerlink" href="#books-docs" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://people.cs.georgetown.edu/jthaler/ProofsArgsAndZK.pdf">Proofs, Arguments, and Zero-Knowledge (PAZK)</a> by Thaler.</li>
+<li><a href="https://github.com/hash-based-snargs-book/hash-based-snargs-book/blob/main/snargs-book.pdf">Hash-based SNARGs-Book</a> by Alessandro Chiesa and Eylon Yogev.</li>
+<li><a href="https://www.zkdocs.com/">ZKDocs</a> by <a href="https://www.trailofbits.com/">Trail of Bits</a></li>
+<li><a href="https://www.rareskills.io/zk-book">The RareSkills Book of Zero Knowledge</a> Not fully disclosed :(.</li>
+<li><a href="https://static1.squarespace.com/static/5fdbb09f31d71c1227082339/t/5ff394720493bd28278889c6/1609798774687/PairingsForBeginners.pdf">Pairings for beginners</a> by Craig Costello.</li>
+<li><a href="https://www.zkpunk.pro/">ZKPunk</a>: A content platform centered around Zero-Knowledge Proof (ZKP) technology, dedicated to promoting its adoption and development</li>
+</ul>
+<h3 id="papers">Papers<a class="headerlink" href="#papers" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://arxiv.org/pdf/2402.15293">SoK: What Don’t We Know? Understanding Security Vulnerabilities in SNARKs</a></li>
+<li><a href="https://github.com/circify/circ/">CirC: Compiler infrastructure for proof systems, software verification, and more</a></li>
+<li><a href="https://eprint.iacr.org/2023/691.pdf">Weak Fiat-Shamir Attacks on Modern Proof Systems</a></li>
+<li><a href="https://eprint.iacr.org/2024/116">On the practical CPAD security of “exact” and threshold FHE schemes and libraries</a></li>
+<li><a href="https://ceur-ws.org/Vol-3429/paper3.pdf">Automated Analysis of Halo2 Circuits</a></li>
+</ul>
+<h3 id="blogs">Blogs<a class="headerlink" href="#blogs" title="Permanent link">&para;</a></h3>
+<h4 id="highlights">Highlights<a class="headerlink" href="#highlights" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://consensys.io/diligence/blog/2023/07/endeavors-into-the-zero-knowledge-halo2-proving-system/#:~:text=How%20can%20bugs%20happen%20in%20Halo2%20circuits%3F">Endeavors into the zero-knowledge Halo2 proving system</a> by Consensys Diligence</li>
+<li><a href="https://blog.trailofbits.com/2022/04/13/part-1-coordinated-disclosure-of-vulnerabilities-affecting-girault-bulletproofs-and-plonk/">Frozen Heart</a> by Trail of bits.</li>
+<li><a href="https://www.zellic.io/blog/gnark-bug-groth16-commitments/">Two Vulnerabilities in gnark's Groth16 Proofs</a> by Zellic.</li>
+</ul>
+<h4 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://tlu.tarilabs.com/cryptography/">Trial of Bit Cryptography Blog</a></li>
+<li><a href="https://0xparc.org/blog">0xPARC Blog</a></li>
+<li><a href="https://zkhack.dev/blog/">zkHACK Blog</a></li>
+<li><a href="https://research.nccgroup.com/">NCC Group Research Blog</a></li>
+<li><a href="https://www.zellic.io/blog/">Zellic Blog</a></li>
+<li><a href="https://www.zksecurity.xyz/blog/">zkSecurity Blog</a></li>
+<li><a href="https://rot256.dev/">Rot256 Blog</a></li>
+<li><a href="https://www.cryptologie.net/">David Wong Blog</a></li>
+<li><a href="https://blog.lambdaclass.com/">LambdaClass Blog</a></li>
+<li><a href="https://www.nethermind.io/blogs">Nethermind Blog</a></li>
+<li><a href="https://www.ingonyama.com/blog">Ingonyama Blog</a></li>
+<li><a href="https://blog.openzeppelin.com/">Open Zeppelin Blog</a></li>
+<li><a href="https://vitalik.eth.limo/">Vitalik Blog</a></li>
+<li><a href="https://samczsun.com/">samczsum Blog</a></li>
+<li><a href="https://timimm.github.io/zk-writeups/">Tim Blog</a></li>
+</ul>
+<h3 id="videos-podcast">Videos &amp; Podcast<a class="headerlink" href="#videos-podcast" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.youtube.com/@zeroknowledgefm">Zero Knowledge Youtube</a> by Zero Knowledge.</li>
+<li><a href="https://www.youtube.com/playlist?list=PLj80z0cJm8QEUVSlofe1Zd7wyaoZrixFM">Zero Knowledge Podcast</a> by Zero Knowledge.</li>
+<li><a href="https://zkhack.dev/whiteboard/">ZK Whiteboard Sessions</a> by ZK Hack.</li>
+<li><a href="https://www.youtube.com/playlist?list=PLj80z0cJm8QFnY6VLVa84nr-21DNvjWH7">ZK Submit</a> by Zero Knowledge.</li>
+<li><a href="https://www.youtube.com/playlist?list=PLj80z0cJm8QHm_9BdZ1BqcGbgE-BEn-3Y">ZK Study Club</a> by Zero Knowledge.</li>
+<li><a href="https://zk-learning.org/">ZKP Mooc</a> by Dan Boneh, Shafi Goldwasser, Dawn Song, Justin Thaler, Yupeng Zhang. </li>
+<li><a href="https://www.youtube.com/playlist?list=PLj80z0cJm8QEmZkGgSOLpr_8B08SCWVQ7">Thaler Book Study Club</a> by Thaler.</li>
+<li><a href="https://www.youtube.com/playlist?list=PLjQ9HCQMu_8yPGgfvsscHgt1w1KJkx8BN">A16Z Summer Research Seminars</a> by A16Z Crypto.</li>
+<li><a href="https://www.youtube.com/watch?v=P2OVtcsSZSQ">Introduction to ZK Security Research</a>  by David Theodore from EF. This classification of bugs in zk-circuits is widely accepted.</li>
+<li><a href="https://yacademy.dev/fellowships/zBlock1">zBlock1</a> by yAcademy. </li>
+<li><a href="https://www.youtube.com/playlist?list=PLormosL00ryKvlKvMgezcSBtANAhqkm44">Moon Math Club</a> by Ingonyama</li>
+<li><a href="https://www.youtube.com/playlist?list=PLBJMt6zV1c7Gh9Utg-Vng2V6EYVidTFCC">The PLONK zero knoledge proof system</a> by David Wong.</li>
+<li><a href="https://www.youtube.com/playlist?list=PLGkwtcB-DfpzST-medFVvrKhinZisfluC">Foundations of Probabilistic Proofs</a> by Alessandro Chiesa.</li>
+<li><a href="https://www.youtube.com/playlist?list=PLkFD6_40KJIyWWtxCPBHwGsrutjvwM5_U">Probabilistically Checkable Proofs and Interactive Proofs</a></li>
+<li><a href="https://www.youtube.com/playlist?list=PLBJMt6zV1c7GeKkR2SUhzx9KSJ9TsEx6n">Zero-knowledge proof composition and incursion</a> by David Wong.</li>
+<li><a href="https://www.youtube.com/playlist?list=PLYpVTXjEi1oe1OeAllJpNhFoI4B7Ws8Yl">An introduction to the Arithmetic of Elliptic Curve</a> by Alvaro Lozano-Robledo.</li>
+</ul>
+<h3 id="audit-reports">Audit Reports<a class="headerlink" href="#audit-reports" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://github.com/nullity00/zk-security-reviews">ZK Related Security Reviews</a> of ZK Protocols by <a href="https://github.com/nullity00">nullity</a>. Consists of Security Reports of 50+ ZK Protocols.</li>
+<li><a href="https://code4rena.com/reports">code4rena Report</a></li>
+</ul>
+<p>You can directly visit the <a href="https://solodit.xyz/">solodit</a> website to get some off-the-shelf audit reports.</p>
+<p>If you are intereted in security about zkVM programs, here are some audit material about smart contract.</p>
+<p>Solidity: 
+  - <a href="https://github.com/sigp/solidity-security-blog">Solidity Security Blog</a>
+  - <a href="https://github.com/crytic/not-so-smart-contracts">not-so-smart-contract</a>
+  - <a href="https://github.com/runtimeverification/verified-smart-contracts/wiki/List-of-Security-Vulnerabilities">List of Security Vunerabilities</a></p>
+<p>Cairo: 
+  - <a href="https://code4rena.com/reports/2024-01-opus#h-01-neglect-of-exceptional-redistribution-amounts-in-withdraw_helper-function">Opus-2024_01-c4</a>
+  - <a href="https://solodit.xyz/issues/healthy-loans-can-be-liquidated-trailofbits-none-lindy-labs-aura-pdf">lindy-labs-aura-2023_11-tob</a>
+  - <a href="https://consensys.io/diligence/audits/2023/06/argent-account-multisig-for-starknet/">Argent-Account-2023_6-consensys</a></p>
+<h3 id="tools">Tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Technique</th>
+<th>UC</th>
+<th>OC</th>
+<th>CE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Circomspect</td>
+<td>SA</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>ZKAP</td>
+<td>SA</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>halo2-analyzer</td>
+<td>SA</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>Coda</td>
+<td>FV</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>Ecne</td>
+<td>FV</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>Picus</td>
+<td>FV</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>Aleo</td>
+<td>FV</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>SnarkProbe</td>
+<td>DA</td>
+<td>✓</td>
+<td>✓</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>CIVER</td>
+<td>FV</td>
+<td>✓</td>
+<td>✗</td>
+<td>✗</td>
+</tr>
+<tr>
+<td>GNARK/Lean</td>
+<td>FV</td>
+<td>✓</td>
+<td>✓</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<h3 id="zkhackctfpuzzles">zkHACK/CTF/Puzzles<a class="headerlink" href="#zkhackctfpuzzles" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://zkhack.dev/">zkHACKs</a></li>
+<li><a href="https://ctf.paradigm.xyz/">Paradigm CTF</a></li>
+<li><a href="https://github.com/paradigmxyz/paradigm-ctf-infrastructure">Paradigm CTF Infrastructure</a></li>
+<li><a href="https://ctf.openzeppelin.com/">Open Zeppelin CTF</a></li>
+<li><a href="https://ctf.ingonyama.com/">Ingonyama CTF</a></li>
+<li><a href="https://github.com/RareSkills/zero-knowledge-puzzles/tree/main">RareSkill ZK Puzzles</a></li>
+<li><a href="https://github.com/credence0x/cairo-damn-vulnerable-defi">cairo-damn-vulnerable</a></li>
+<li><a href="https://starknet-security-challenges.app/">starknet-security-challenges.app</a></li>
+<li><a href="https://github.com/pscott/StarknetCC-CTF">StarknetCC-CTF</a></li>
+</ul>
+<p>writeups</p>
+<ul>
+<li><a href="https://ventral.digital/secureum-auditor-bootcamp-2021-quizzes/">Secureum bootcamp/race writeup</a></li>
+<li><a href="https://hackmd.io/@shuklaayush/SkWizdyBh">2023 Ingonyama CTF WP by shuklaayush</a></li>
+<li><a href="https://github.com/ingonyama-zk/zkctf-2023-writeups">2023 Ingonyama CTF Official WP</a></li>
+</ul>
+<h3 id="lectures">Lectures<a class="headerlink" href="#lectures" title="Permanent link">&para;</a></h3>
+<p><a href="https://web.stanford.edu/~marykw/classes/CS250_W18/index.html">Algebraic Error Correcting Codes</a></p>
+<h3 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="https://www.aumasson.jp/data/talks/zksec_zk7.pdf">"Security of ZKP projects: same but different"</a> by JP Aumasson @ <a href="https://www.taurushq.com/">Taurus</a>. Great slides outlining the different types of zk security vulnerabilities along with examples.</li>
+<li><a href="https://github.com/0xPARC/zk-bug-tracker">0xPARC zk-bug-tracker</a> by <a href="https://0xparc.org/">0xPARC</a> and <a href="https://pse.dev/">PSE</a>.</li>
+<li>BUG bounty platform: <a href="https://code4rena.com/">code4rena</a>, <a href="https://immunefi.com/">Immunefi</a>.</li>
+<li><a href="https://github.com/quantstamp/l2-security-framework">l2-security-framework by QuantStamp</a></li>
+<li><a href="https://koukyosyumei.github.io/MyZKP/index.html">MyZKP: Building Zero Knowledge Proof from Scratch in Rust</a></li>
+<li><a href="https://docs.google.com/spreadsheets/d/1E97ulMufitGSKo_Dy09KYGv-aBcLPXtlN5QUpwyv66A/edit?gid=0#gid=0">ZKP vulns dataset</a>.</li>
+</ul>
+<h2 id="acknowledgements">Acknowledgements<a class="headerlink" href="#acknowledgements" title="Permanent link">&para;</a></h2>
+<p>Special thanks go to the following individuals and organizations for their ongoing support and encouragement: <a href="https://nullity00.github.io/">Nullity</a>.</p>
+
+
+
+
+
+
+
+  
+    
+  
+  
+
+
+  <aside class="md-source-file">
+    
+      
+  <span class="md-source-file__fact">
+    <span class="md-icon" title="Last update">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
+    </span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="June 16, 2026 02:42:33 CST">June 16, 2026 02:42:33</span>
+  </span>
+
+    
+    
+    
+    
+  </aside>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 - 2030 Tim
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.tabs", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
