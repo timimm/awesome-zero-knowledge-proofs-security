@@ -11,11 +11,6 @@ site_dir: /tmp/awesome-zero-knowledge-proofs-security-site
 
 nav:
   - Home: README.md
-  - Checklist: check_list.md
-  - AI Skills:
-      - Overview: AI Skills/README.md
-      - audit-overview: AI Skills/audit-overview.md
-      - zk-audit: AI Skills/zk-audit.md
   - Architectural Design Flaws:
       - Front-running: Architectural Design Flaws/Front-Running.md
   - Circuit Bugs:
@@ -40,6 +35,11 @@ nav:
       - Lack of Domain Separation: Proving System Bugs/Lack of Domain Seperation.md
       - Missing Curve Point Check: Proving System Bugs/Missing Curve Point Check.md
       - Insecure Hash Function: Proving System Bugs/Unsecure Hash Function.md
+  - Checklist: check_list.md
+  - AI Skills:
+      - Overview: AI Skills/README.md
+      - audit-overview: AI Skills/audit-overview.md
+      - zk-audit: AI Skills/zk-audit.md
 
 theme:
   name: material
