@@ -12,6 +12,10 @@ site_dir: /tmp/awesome-zero-knowledge-proofs-security-site
 nav:
   - Home: README.md
   - Checklist: check_list.md
+  - AI Skills:
+      - Overview: AI Skills/README.md
+      - audit-overview: AI Skills/audit-overview.md
+      - zk-audit: AI Skills/zk-audit.md
   - Architectural Design Flaws:
       - Front-running: Architectural Design Flaws/Front-Running.md
   - Circuit Bugs:

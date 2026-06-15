@@ -31,6 +31,7 @@ jobs:
           mkdir -p .mkdocs-docs
           cp README.md .mkdocs-docs/README.md
           cp check_list.md .mkdocs-docs/check_list.md
+          cp -R "AI Skills" .mkdocs-docs/
           cp -R "Architectural Design Flaws" .mkdocs-docs/
           cp -R "Circuits Bugs" .mkdocs-docs/
           cp -R "Proving System Bugs" .mkdocs-docs/
