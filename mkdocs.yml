@@ -6,7 +6,7 @@ copyright: Copyright &copy; 2024 - 2030 Tim
 repo_name: timimm/awesome-zero-knowledge-proofs-security
 repo_url: https://github.com/timimm/awesome-zero-knowledge-proofs-security
 
-docs_dir: .
+docs_dir: .mkdocs-docs
 site_dir: /tmp/awesome-zero-knowledge-proofs-security-site
 
 nav:
