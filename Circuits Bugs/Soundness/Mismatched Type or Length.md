@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Mismatched type or length is a bug developers do not perform sanitization or check on the the type or length of the inputs, which will result in unexpected behavior, even panic. This is something that pragues us always in securty especially in memory unsafe language. 
+Mismatched type or length bugs happen when developers do not sanitize or validate input types and lengths. They can lead to unexpected behavior, panics, truncation, or collisions, especially across FFI boundaries and memory-unsafe code.
 
 Even strongly typed languages like Rust can potentially lead to the aforementioned vulnerability. For example, in Rust, using `as` for type casting performs a truncation rather than raising a warning, which is a design decision balancing safety, performance, and developer control. Rust places the responsibility on the developer to ensure correct type conversions when using `as`. If a safer conversion is needed, Rust offers alternatives, like: `TryFrom` and `Tryinto` trait.
 
@@ -53,7 +53,7 @@ h{domain_value}(input1, input2)
 
 #### Vuln Description
 
-We noticed that the implementation of zktrie uses FFI (Foreign Function Interface) to link C code compiled from Go code. In this scenario, we need to pay attention to casting issues, i.e. data truncation, pointer type errors, struct alligned issues, signedness conversion issues and character encoding inconsistencies.
+The zkTrie implementation uses FFI (Foreign Function Interface) to link C code compiled from Go code. In this scenario, reviewers need to pay attention to casting issues, data truncation, pointer type errors, struct alignment issues, signedness conversion issues, and character encoding inconsistencies.
 
 The following snippet shows one of the casting issues:
 

@@ -1,4 +1,4 @@
-# Unsecure Hash Function
+# Insecure Hash Function
 - [Introduction](#introduction)
 - [Case](#case)
   - [1. Secure-starknet: Hash function is not second image resistant](#1-secure-starknet-hash-function-is-not-second-image-resistant)
@@ -12,24 +12,24 @@
 
 ## Introduction
 
-Hash function is used to mapping a message of arbitrary length to a fixed-length message digest. and is sort of one way function where it is easy to compute the output from a given input, but computationally infeasible to reverse the process. 
+Hash functions map messages of arbitrary length to fixed-length digests. A cryptographic hash function should be easy to compute but computationally infeasible to invert.
 
-- Collision-Resistent: Attackers can not find 2 different inputs $x_1, x_2$ that $h(x_1) = h(x_2)$ holds,
+- Collision resistance: Attackers cannot find two different inputs $x_1, x_2$ such that $h(x_1) = h(x_2)$.
 - Hiding: The output $y$ does not leak any information about the input $x$.
 - Puzzle-friendly: Given a random number $r$ and target value $y$, it is no efficient way to find the input $x$ such that $h(x||r)=y$, where `||` is the concatenation operator. One can only choose input randomly.
 
-Unsecure hash function vulnerability refers to security weaknesses arising from the use of weak or improperly designed cryptographic hash functions. Common attack methods include:
+Insecure hash function vulnerabilities arise from weak hash functions, unsafe constructions, or incorrect use of a secure primitive. Common attack methods include:
 
 1. Pre-image attack: given the hash output $y$, find the input $x$.
 2. Second-image attack: given the input $x_1$, find another input $x_2$ such that $h(x_1) = h(x_2)$.
-3. Collision attack: find two inputs $x_1, x_2$ such that $h(x_1) = h(x_2)$. [Birthday attack](https://en.wikipedia.org/wiki/Birthday_attack) is a bruteforce collision attack that exploits the mathematics behind the birthday problem in probability theory
+3. Collision attack: find two inputs $x_1, x_2$ such that $h(x_1) = h(x_2)$. [Birthday attack](https://en.wikipedia.org/wiki/Birthday_attack) is a brute-force collision attack that exploits the mathematics behind the birthday problem in probability theory.
 4. [Length extension attack](https://en.wikipedia.org/wiki/Length_extension_attack): is a type of attack where an attacker can use $h(message_1)$ and the length of $message_1$ to calculate $h(message_1 || message_2)$ for an attacker-controlled $message_2$, without needing to know the content of $message_1$.
 
 **The security requirements for hash functions depend on application scenario**. Generally require the use of cryptographic secure hash functions (CHF) $h(x)=y$ that is expected to have following properties:
 
 - Pre-image resistance: Given a hash output $y$, it is hard to find the corresponding input $x$ .
 - Second pre-image resistance: given the input $x_1$, it is hard to find another input $x_2$ such that $h(x_1) = h(x_2)$.
-- Collision resistance: it should be difficult to find find two inputs $x_1, x_2$ such that $h(x_1) = h(x_2)$. Such a pair is called a cryptographic hash collision. This property is sometimes referred to as strong collision resistance. It requires a hash value at least twice as long as that required for pre-image resistance; otherwise, collisions may be found by a birthday attack.
+- Collision resistance: It should be difficult to find two inputs $x_1, x_2$ such that $h(x_1) = h(x_2)$. Such a pair is called a cryptographic hash collision. This property is sometimes referred to as strong collision resistance. It requires a hash value at least twice as long as that required for pre-image resistance; otherwise, collisions may be found by a birthday attack.
 
 Non-cryptographic hash functions are used in hash tables and to detect accidental errors; their constructions frequently provide no resistance to a deliberate attack. For example, a denial-of-service attack on hash tables is possible if the collisions are easy to find.
 

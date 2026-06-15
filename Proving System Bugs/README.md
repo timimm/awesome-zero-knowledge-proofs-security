@@ -1,13 +1,12 @@
-# Proving Systme Bugs
+# Proving System Bugs
 
-Proving system is a cryptographic tool to prove the correct execution of the circuits. The choice of proving system and framework is dependent on the requirements of the project and does affect the front end used. 
+A proving system is the cryptographic layer used to prove and verify correct circuit execution. The choice of proving system and framework depends on project requirements and affects the circuit front-end, trusted setup, transcript, verifier, and deployment model.
 
-Unlike circuit bugs, proving system bugs are some more fundamental vulnerabilities that are strongly related to cryptography or even mathematics. Including but not limited to:
+Unlike circuit bugs, proving-system bugs are usually closer to cryptography, algebra, and protocol implementation. Common classes include:
 
 - [Bad Polynomial Implementation](./Bad%20Polynomial%20Impl.md)
 - [Frozen Heart](./Frozen%20Heart.md)
-- [Lack of Domain Seperation](./Lack%20of%20Domain%20Seperation.md)
+- [Lack of Domain Separation](./Lack%20of%20Domain%20Seperation.md)
 - [Missing Curve Point Check](./Missing%20Curve%20Point%20Check.md)
-- [Unsecure Hash Function](./Unsecure%20Hash%20Function.md)
-
+- [Insecure Hash Function](./Unsecure%20Hash%20Function.md)
 

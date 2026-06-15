@@ -20,4 +20,22 @@ As a result, overflow and underflow do not trigger errors but rather "wrap aroun
 
 ## Case
 
+### 1. Dark Forest v0.3: Missing bit length check
 
+| Identifier | Severity | Location | Impact |
+| :--------: | :------: | :------: | :----: |
+| Daira Hopwood | High | [Dark Forest v0.3: Missing Bit Length Check](https://github.com/0xPARC/zk-bug-tracker#1-dark-forest-v03-missing-bit-length-check) | A range proof could be satisfied by values outside the intended bounds. |
+
+#### Description
+
+Dark Forest used a `RangeProof` circuit built on CircomLib's `LessThan` comparator. The comparator assumed its inputs fit within the configured bit width, but the circuit did not separately constrain the bit length of those inputs. A prover could provide larger field elements that wrapped under the comparator's internal representation, causing the range proof to accept values outside the intended domain.
+
+### 2. EY Nightfall: Nullifier overflow across EVM and SNARK fields
+
+| Identifier | Severity | Location | Impact |
+| :--------: | :------: | :------: | :----: |
+| BlockHeader | High | [EY Nightfall: Missing Nullifier Range Check](https://github.com/0xPARC/zk-bug-tracker#18-ey-nightfall-missing-nullifier-range-check) | A spent note could be represented by multiple on-chain nullifier values. |
+
+#### Description
+
+Nightfall stored nullifiers as EVM `uint256` values, while the circuit interpreted public inputs modulo the SNARK scalar field. Without an on-chain range check, a user could submit `n` and later submit `n + p`, where `p` is the SNARK field order. The circuit reduced both values to the same field element, but the contract treated them as different nullifiers, enabling a repeated spend.

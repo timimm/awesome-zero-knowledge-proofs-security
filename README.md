@@ -7,12 +7,12 @@
 - [Table of Content](#table-of-content)
 - [1. Introduction](#1-introduction)
 - [2. Vulnerability Classification](#2-vulnerability-classification)
-  - [Architectureal Design Flaws](#architectureal-design-flaws)
+  - [Architectural Design Flaws](#architectural-design-flaws)
   - [FrontEnd: Circuits](#frontend-circuits)
     - [Soundness Error (Under-constrained)](#soundness-error-under-constrained)
     - [Completeness Error (Over-constrained)](#completeness-error-over-constrained)
     - [Zero Knowledge Error](#zero-knowledge-error)
-  - [Misc: Witness Generation \& Arithemtization](#misc-witness-generation--arithemtization)
+  - [Misc: Witness Generation \& Arithmetization](#misc-witness-generation--arithmetization)
   - [BackEnd: Proving system](#backend-proving-system)
 - [3. Security Consideration](#3-security-consideration)
   - [circom](#circom)
@@ -35,33 +35,33 @@
 
 ## 1. Introduction
 
-[Zero Knowledge Proof (ZKP)](https://github.com/matter-labs/awesome-zero-knowledge-proofs) technology is considered as a very promising infrastructure in blockchain field, even not limited to the Web3 world.
+[Zero Knowledge Proof (ZKP)](https://github.com/matter-labs/awesome-zero-knowledge-proofs) technology is considered a promising infrastructure for blockchain and many broader privacy-preserving systems.
 
-In concept, proving system (or proof system in some context) are indeed advanced cryptographic techniques as you can see in various papers. But when it comes to a ZK application, from a development perspective, it is usually divided into two parts: front-end and back-end.
+Conceptually, proving systems are advanced cryptographic protocols. In practical ZK applications, however, security review usually separates the system into a front-end and a back-end.
 
-In general, ZKP is a technique for proving the correct execution of programs, which has completeness, soundness, and zero knowledge property. Specifically, the front-end is these programs that can be proven, namely circuits that implement computation logic, while the back-end is a proving system used to generate proof for the execution of these logic. 
+In general, ZKP is a technique for proving correct program execution while preserving completeness, soundness, and zero knowledge. The front-end is the provable program, usually circuits or circuit-like constraints that encode computation logic. The back-end is the proving system that generates and verifies proofs for that logic.
 
-As with other programming field, the primary technical risk faced by both is code bugs.
+As in other engineering domains, many practical ZK failures come from implementation bugs and incorrect integration assumptions.
 
-I strongly recommand everyone to learn ZK Security from the perspective of zkapp. The following figure from [Aumasson'slides](https://www.aumasson.jp/data/talks/zksec_zk7.pdf) which provide us with a good layered display.
+This repository uses a zk application perspective. The following figure from [Aumasson's slides](https://www.aumasson.jp/data/talks/zksec_zk7.pdf) provides a useful layered model.
 
 <div align=center><img src="Assets/dc_zk.png" style="zoom:50%;"></div>
 
-To be more precise, circuits implementation comes with its own set of vulnerability classification, disjoint from the low-level cryptography bugs that may be found in the proving system.
+Circuit implementations have their own vulnerability classes, which are distinct from low-level cryptographic bugs in proving systems.
 
 ## 2. Vulnerability Classification
 
-The mental models of circuits (or constraints) are very different from traditional programming, programmers should be very careful about it. 
+The mental model of circuits is different from traditional programming. A value appearing in witness generation code is not necessarily constrained by the proof.
 
-While the programming approach of zkVM programs is more similar to traditional programming (but not exactly the same because the underlying VM is implemented as circuits, so only some circuit friendly operations can be implemented, such as hash functions [pedersen](https://iden3-docs.readthedocs.io/en/latest/iden3_repos/research/publications/zkproof-standards-workshop-2/pedersen-hash/pedersen.html#pdf-link), [poseidon](https://eprint.iacr.org/2019/458.pdf), and [MiMC](https://eprint.iacr.org/2016/492.pdf), so the learning threshold and cost are lower. **The underlying of zkVM is essentially circuits**.
+The programming model of zkVM applications is closer to traditional programming, but the underlying VM is still implemented as constraints. Only circuit-friendly operations, such as [Pedersen](https://iden3-docs.readthedocs.io/en/latest/iden3_repos/research/publications/zkproof-standards-workshop-2/pedersen-hash/pedersen.html#pdf-link), [Poseidon](https://eprint.iacr.org/2019/458.pdf), and [MiMC](https://eprint.iacr.org/2016/492.pdf), are cheap to prove. **The underlying execution model of zkVMs is still circuit-based**.
 
-The emergence of zkVM (including zkEVM) has greatly enriched the application of zk technology, and people can prove more diverse programs, such as smart contracts (starknet based on [cairo VM](https://github.com/lambdaclass/cairo-vm), blockchain based on various EVMs such as [Polygon](https://docs.polygon.technology/zkEVM/), [Scroll](https://scroll.io/blog/zkevm), [zksync](https://github.com/matter-labs/zksync-era), etc.) and general programs ([RISC Zero](https://dev.risczero.com/api/zkvm/), [SP1](https://github.com/succinctlabs/sp1), etc.) . 
+The emergence of zkVMs, including zkEVMs, has expanded ZK applications to smart contracts, rollups, and general programs, such as [Starknet](https://github.com/lambdaclass/cairo-vm), [Polygon zkEVM](https://docs.polygon.technology/zkEVM/), [Scroll](https://scroll.io/blog/zkevm), [zkSync](https://github.com/matter-labs/zksync-era), [RISC Zero](https://dev.risczero.com/api/zkvm/), and [SP1](https://github.com/succinctlabs/sp1).
 
-Meanwhile, it also aligns with many traditional programming fields, such as reverse engineering (A CTF [puzzle](https://github.com/weikengchen/zkctf-r0-season1) by [weikeng chen](https://github.com/weikengchen/))。
+It also overlaps with traditional security fields such as reverse engineering, as shown by this CTF [puzzle](https://github.com/weikengchen/zkctf-r0-season1) by [weikeng chen](https://github.com/weikengchen/).
 
-Therefor, the scope of programs above zkVM is much boarder, including smart contracts ([Solidity](https://soliditylang.org/), [Cairo](https://www.cairo-lang.org/)) and other traditional programs, which security will not be discussed here for now.
+Therefore, programs above zkVMs have a broader security scope, including smart contracts and traditional application logic. This repository focuses mainly on ZK-specific security issues.
 
-### Architectureal Design Flaws
+### Architectural Design Flaws
 
 - [Front Running](./Architectural%20Design%20Flaws/Front-Running.md)
 
@@ -69,41 +69,42 @@ Therefor, the scope of programs above zkVM is much boarder, including smart cont
 
 #### Soundness Error (Under-constrained)
 
-Missing constraints or under-constrained is the most common bug in zk circuits, which occurs when a system, **fails to enforce necessary limitations or conditions** on inputsor operations. This could be due to absent validation checks, insufficient boundary enforcement, or improper assumptions about input data. As a result, users or attackers can manipulate or bypass expected behavior, leading to unintended consequences, security issues, or data corruption. 
+Missing constraints are the most common class of circuit bug. They occur when a circuit **fails to enforce necessary conditions** on inputs, witness values, intermediate computations, or protocol state. As a result, a prover may satisfy the constraints while proving a statement that is false under the intended specification.
 
-This is a very general type of bug, and we divide it into 6 sub issues:
+This repository groups soundness errors into the following subcategories:
 
 - [General Logic](./Circuits%20Bugs/Soundness/General%20Logic%20Bug.md)
 - [Arithmetic Over/Under Flow](./Circuits%20Bugs/Soundness/Arithmetic%20Over%20or%20Under%20Flow.md)
 - [Mismatched Types/Lengths](./Circuits%20Bugs/Soundness/Mismatched%20Type%20or%20Length.md)
 - [Non-determinism](./Circuits%20Bugs/Soundness/Non-determinism.md)
 - [Assigned but not Constrained](./Circuits%20Bugs/Soundness/Assigned%20but%20not%20constrained.md)
+- [Cryptographic Primitive Misuse](./Circuits%20Bugs/Soundness/Cryptographic%20Primitive%20Misuse.md)
 - [Compiler Optimization](./Circuits%20Bugs/Soundness/Compiler%20Optimization.md)
-- [Trusted Setup Error](./Circuits%20Bugs/Zero-Knowledge/Trusted%20Setup%20Error.md)
+- [Trusted Setup Error](./Circuits%20Bugs/Soundness/Trusted%20Setup%20Error.md)
 
 #### Completeness Error (Over-constrained)
 
-- not much
+- [Over-constrained Circuits](./Circuits%20Bugs/Completeness/Over-constrained%20Circuits.md)
   
 #### Zero Knowledge Error
 
-- [Bad Protocol Design/Implementation](./Circuits%20Bugs/Zero-Knowledge/Bad%20Protocol%20Design\Impl.md)
+- [Bad Protocol Design/Implementation](./Circuits%20Bugs/Zero-Knowledge/Bad%20Protocol%20Design%5CImpl.md)
 
-### Misc: Witness Generation & Arithemtization
+### Misc: Witness Generation & Arithmetization
 
 Worth further exploring.
 
 ### BackEnd: Proving system
 
-The backend is the proving system that leans towards the cryptographic part, so this part involves more secure applications of cryptographic primitives. One must note: **even secure primitives may introduce vulnerabilities if used incorrectly in the larger protocol or configured in an insecure manner**. 
+The backend is the proving system and is closer to the cryptographic layer. One must note: **even secure primitives may introduce vulnerabilities if used incorrectly in the larger protocol or configured in an insecure manner**. 
 
-To sum up, most vulnerabilities of proving system are **Unstandardized Cryptographic Implementation**.
+To sum up, many proving-system vulnerabilities come from **unstandardized cryptographic implementation**.
 
 - [Bad Polynomial Implementation](./Proving%20System%20Bugs/Bad%20Polynomial%20Impl.md)
 - [Frozen Heart](./Proving%20System%20Bugs/Frozen%20Heart.md)
-- [Lack of Domain Seperation](./Proving%20System%20Bugs/Lack%20of%20Domain%20Seperation.md)
+- [Lack of Domain Separation](./Proving%20System%20Bugs/Lack%20of%20Domain%20Seperation.md)
 - [Missing Curve Point check](./Proving%20System%20Bugs/Missing%20Curve%20Point%20Check.md)
-- [Unseure Hash Function](./Proving%20System%20Bugs/Unsecure%20Hash%20Function.md)
+- [Insecure Hash Function](./Proving%20System%20Bugs/Unsecure%20Hash%20Function.md)
 
 ## 3. Security Consideration
 
@@ -111,6 +112,8 @@ To sum up, most vulnerabilities of proving system are **Unstandardized Cryptogra
 
 - [blockdev's slides](https://hackmd.io/@blockdev/Bk_-jRkXa#/)
 - [Best Practices for Large Circom Circuits](https://hackmd.io/V-7Aal05Tiy-ozmzTGBYPA?view)
+
+For practical review, use [check_list.md](./check_list.md) together with the [Circuit Bugs](./Circuits%20Bugs/README.md) taxonomy. Circom-specific review should focus on constraint completeness, public input binding, witness assignment, compiler behavior, and cryptographic primitive integration.
 
 ### cairo
 
